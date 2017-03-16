@@ -1,27 +1,30 @@
 <!DOCTYPE html>
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-<html>
+<html>    
 <head>
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
   <title>POIS</title>
 </head>
 <body>
+    <script src="utils.js"></script>    
+  <div></div>
   <h1>POIS</h1>
   <div>
-  	<h3> Bienvenido. Identif&iacute;quese para continuar</h3>
+    <h3> Bienvenido. Identif&iacute;quese para continuar</h3>
    
-   	<form action="/perfil" method="POST">	 
-     <div>
-	   <input class="passwd" type="text" name="usuario" placeholder="usuario" size="25" max="10">
-   	 </div> 
+    <form action="/perfil" method="POST">	 
+    <div>
+      <input class="passwd" type="text" name="usuario" placeholder="usuario" size="25">
+     </div> 
     
      <div>
-      <input class="passwd" type="password" name="password" placeholder="contrasenia" size="25" max="10">
+      <input id="pass" class="passwd" type="password" name="password" placeholder="contrasenia" size="25">
      </div>
     
      <div>
-       <input class="botonIngresar" type="submit" value="INGRESAR">
+         <input class="botonIngresar" onclick="dar_bienvenida()" type="submit" value="INGRESAR">
+           
      </div>
-	</form>
+    </form>
 
   </div>
   </body>
