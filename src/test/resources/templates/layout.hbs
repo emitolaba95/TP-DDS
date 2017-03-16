@@ -1,14 +1,16 @@
 <html>
 <head>
-	{{>navBar.hbs}}
-	<link rel="stylesheet" type="text/css" href="main.css" media="screen" />
-	<link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />	
+    {{>navBar.hbs}}
+    <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />	
 	<title>
 	 {{#block "titulo"}}
 	 {{/block}}
 	</title>	
 </head>
 <body> 
+  <script src="utils.js"></script>
+
   <div class="container">
 	 {{#block "principal"}}
 	 {{/block}}
