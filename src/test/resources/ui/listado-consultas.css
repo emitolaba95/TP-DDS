@@ -1,17 +1,6 @@
 /* -----------------------
 Autor: internet
 ------------------------*/
-body {
-  font-family: "Helvetica Neue", Helvetica, Arial;
-  font-size: 14px;
-  line-height: 20px;
-  font-weight: 400;
-  color: #3b3b3b;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  background: #e3e0cc;
-}
-
 .navbar {
 
     list-style-type: none;

@@ -3,6 +3,10 @@ Autor: internet
 ------------------------*/
 body
 {
+ 	font-family: "Helvetica Neue", Helvetica, Arial;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 400;
 	margin: 0;
 	padding: 0;
 	color: #333;
@@ -127,10 +131,14 @@ Layout styles
 
 .footer {
   position: absolute;
-  background-color: #000;
+  background-color: #008CBA;
   bottom: 0;
   width: 100%;
   height: 60px;
+}
+
+p.distinct{
+				 color: #FFFFFF;
 }
 
 /* -----------------------
