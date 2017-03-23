@@ -1,22 +1,6 @@
 /* -----------------------
 Autor: internet
 ------------------------*/
-.navbar {
-
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-   display: inline;
- 
-}
-
-
-a {
-    display: table;
-    padding: 8px;
-    background-color:  #e8edd4;
-}
-
 .passwd{
         background-color: #f0f0f0;
 }
@@ -87,14 +71,6 @@ hr
 	border: 0;
 	border-top: 1px solid #ddd;
 }
-
-
-a:link { color: royalblue; }
-a:visited { color: purple; }
-a:focus { color: black; }
-a:hover { color: green; font-style: italic;}
-a:active { color: red; }
-
 /* -----------------------
 Layout styles
 ------------------------*/
