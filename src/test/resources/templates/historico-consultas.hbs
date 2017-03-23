@@ -1,15 +1,10 @@
-{{>navBar.hbs}}
+{{#partial "titulo"}}
+Historico Consultas
+{{/partial}}
 
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />
-  <title>POIS</title>
-</head>
-  	
-  <h1>HISTORICO CONSULTAS</h1>  
+{{#partial "principal"}}
+<h1>HISTORICO CONSULTAS</h1>  
   
-  <body style="margin:50px 0; padding:0;text-align:center;">
 <br>
 <br>
   
@@ -58,6 +53,16 @@
 		 
 		 
 		 </div>
+{{/partial}}
+{{>layout.hbs}}
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />
+  <title>POIS</title>
+</head>
+  	
+  
   
 
   

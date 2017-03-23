@@ -3,25 +3,24 @@ Administrar POIs
 {{/partial}}
 
 {{#partial "principal"}}
- <h1>Administrar POIs</h1> 
-	  
+ <h1>Administrar POIs</h1>  
 
     
-    	<form action="/administrarPoi" method="GET">	
-    		  <div>
-	  			<h4>Tipo:
-	  		  <select name = "tipo">
-	  		  <option value="Todos">Todos</option>
-  	  		  <option value="Negocio">Negocio</option>
-  	 		  <option value="EstacionDeColectivo">Estacion de Colectivo</option>
-  	 		  <option value="Banco">Banco</option>
-  			  <option value="Cgp">CGP</option>
-  	 		  </select>
-	  			</h4>
-	 			</div>
-	 		<input class="passwd" type="text" value="all" name="nombre" placeholder="nombre" size="25" max="10">
-        	<input class="botonIngresar" type="submit" value="Buscar">
-        </form>
+    <form action="/administrarPoi" method="GET">	
+    	  <div>
+            <h4>Tipo:
+	  	<select name = "tipo">
+                    <option value="Todos">Todos</option>
+                    <option value="Negocio">Negocio</option>
+                    <option value="EstacionDeColectivo">Estacion de Colectivo</option>
+                    <option value="Banco">Banco</option>
+                    <option value="Cgp">CGP</option>
+  	 	</select>
+            </h4>
+	 </div>
+	 <input class="passwd" type="text" value="all" name="nombre" placeholder="nombre" size="25" max="10">
+        <input class="botonIngresar" type="submit" value="Buscar">
+    </form>
         
         
     <br>
@@ -36,24 +35,24 @@ Administrar POIs
         </tr>
         
         {{#each pois}}
-			   <tr class="row">
-				   <td>{{nombre}}</td>
-				   <td>{{direccion}}</td>
+            <tr class="row">
+                <td>{{nombre}}</td>
+		<td>{{direccion}}</td>
 				   <!-- <td>{{poi_tipo}}</td> -->
-				   <td>
-				   		<form action="/modificarPoi" method="GET">
-				   			<input type="hidden" name=poiId value={{id}} >
-				   			<input type="submit" value="M">
-				   		</form>
-				   </td>
-				   <td>
-				   		<form action="/bajaPoi" method="POST">
-				   			<input type="hidden" name=poiId value={{id}} >
-				   			<input type="submit" value="X">
-				   		</form>
-				   </td>
-			  </tr>
-		      {{/each}}
+		<td>
+                    <form action="/modificarPoi" method="GET">
+                        <input type="hidden" name=poiId value={{id}} >
+                        <input class= "botonFeliz" type="submit" value="MODIFICAR">
+                    </form>
+		</td>
+		<td>
+                    <form action="/bajaPoi" "method="POST">
+			<input type="hidden" name=poiId value={{id}} >
+			<input class="botonWarning" type="submit" value="ELIMINAR">
+                    </form>
+		</td>
+            </tr>
+	{{/each}}
         </table>
     </div>
     <br>

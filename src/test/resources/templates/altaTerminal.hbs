@@ -1,15 +1,8 @@
+{{#partial "titulo"}}
+ Alta Terminal
+{{/partial}}
 
-{{>navBar.hbs}}
-
-
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />
-  <title>Terminal</title>
-</head>
-
-   <br><br>
+{{#partial "principal"}}  
    
   <h1>ALTA TERMINAL</h1>  
   <body style="text-align:center";>
@@ -35,7 +28,5 @@
 	  <input class="botonIngresar" type="submit" value="AGREGAR">
 	  
     </form>
-    
-  
- </body>
-</html>
+{{/partial}}
+{{>layout.hbs}}

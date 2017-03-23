@@ -1,18 +1,10 @@
+{{#partial "titulo"}}
+ Modifcar Terminal
+{{/partial}}
 
-{{>navBar.hbs}}
-
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />
-  <title>POIS</title>
-</head>
-
-   <div>    </div>
-   <div>    </div>
-  <h1>MODIFICAR TERMINAL ID: {{numeroTerminal}}</h1>  
-  <body style="text-align:center">
-  
+{{#partial "principal"}}
+<h1>MODIFICAR TERMINAL ID: {{numeroTerminal}}</h1>  
+  <body style="text-align:center">  
   
     <div>
   	<h5> Realice los cambios y haga click en Guardar (No me quedo mas fea la pantalla porque no tuve mas tiempo) </h5>
@@ -56,6 +48,5 @@
     	</table>
     </div> 
 
-  
- </body>
-</html>
+{{/partial}}
+{{>layout.hbs}}

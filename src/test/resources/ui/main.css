@@ -40,6 +40,19 @@ h1,h2,h3 {
     font-size: 16px;
 }
 
+
+.botonWarning{
+    background-color: #992244;    
+    color: white;
+}
+
+.botonFeliz{
+    background-color:#4CAF50;    
+    color: white;
+    #4CAF50
+}
+
+
 h1,h2,h3,h4,h5,h6
 {
 	margin: 0 0 .5em;

@@ -1,83 +1,67 @@
+{{#partial "titulo"}}
+Administracion de Terminales
+{{/partial}}
 
-{{>navBar.hbs}}
-
-<!DOCTYPE html>
-<html>
-<head>
-  <link rel="stylesheet" type="text/css" href="listado-consultas.css" media="screen" />
-  <title>POIS</title>
-</head>
-
-	<br>
-	<br>
-	
-  <h1>ADMINISTRACION DE TERMINALES</h1>  
-  	<body style="margin:50px 0; padding:0;text-align:center;">
-  
+{{#partial "principal"}}	
+  <h1>ADMINISTRACION DE TERMINALES</h1>
+     
     <div>
     	<form action="/terminal" method="GET">	
     	Comuna:
-    		<input class="passwd" type="text" id="comuna" value=0 name="comuna" placeholder="comuna" size="25" max="10">
-	  		<input class="botonIngresar" type="submit" value="BUSCAR">
-	  	</form>
+            <input class="passwd" type="text" id="comuna" value=0 name="comuna" placeholder="comuna" size="25" max="10">
+            <input class="botonIngresar" type="submit" value="BUSCAR">
+	</form>
     </div> 
 	
-	<br>
-	<br>
+    <br>
+    <br>
 	
-	<div style="width:800px; margin:0 auto;">
-  		 <h2>RESULTADOS</h2>
+    <div style="width:800px; margin:0 auto;">
+        <h2>RESULTADOS</h2>  		 
+  	 <br>
+  	 <br>
   		 
-  		 <br>
-  		 <br>
-  		 
-  		 <table class="table table-stripped" align="center">
-			   <tr class="row header">
-			   	   <th>Terminal</th>
-				   <th>Nombre</th>
-				   <th>Comuna</th>
-				   <th>Modificar</th>
-				   <th>Eliminar</th>
-			   </tr>
+  	<table class="table table-stripped" align="center">
+            <tr class="row header">
+               <th>Terminal</th>
+               <th>Nombre</th>
+               <th>Comuna</th>
+               <th>Modificar</th>
+               <th>Eliminar</th>
+            </tr>
 		
-			   {{#each terminales}}
-			   <tr class="row">
-				   <td>{{numeroTerminal}}</td>
-				   <td>{{nombre}}</td>
-				   <td>{{numeroComuna}}</td>
-				   <td>
-				   		<form action="/modificarTerminal" method="GET">
-				   			<input type="hidden" name=nroTerminal value={{numeroTerminal}} >
-				   			<input type="submit" value="M">
-				   		</form>
-				   </td>
-				   <td>
-				   		<form action="/bajaTerminal" method="POST">
-				   			<input type="hidden" name=nroTerminal value={{numeroTerminal}} >
-				   			<input type="submit" value="X">
-				   		</form>
+            {{#each terminales}}
+            <tr class="row">
+		<td>{{numeroTerminal}}</td>
+		<td>{{nombre}}</td>
+		<td>{{numeroComuna}}</td>
+		<td>
+                    <form action="/modificarTerminal" method="GET">
+			<input type="hidden" name=nroTerminal value={{numeroTerminal}} >
+			<input type="submit" value="M">
+		</form>
+		
+                </td>
+		<td>
+		
+                <form action="/bajaTerminal" method="POST">
+                    <input type="hidden" name=nroTerminal value={{numeroTerminal}} >
+                    <input type="submit" value="X">
+		</form>
 				   </td>
 			  </tr>
-		      {{/each}}
-		</table>
+            {{/each}}
+	</table>
 		 
-		   <div>
-  			<form action="/altaTerminal" method="GET">	
-	  			<input class="botonIngresar" type="submit" value="ALTA TERMINAL">
-    		</form>
+	<div>
+            <form action="/altaTerminal" method="GET">	
+	  	<input class="botonIngresar" type="submit" value="ALTA TERMINAL">
+            </form>
    			
- 		  </div>
+ 	</div>
 		 
   </div>
-  
 
-	
-	<script>
-	
-	
-	
-	</script>
 
-  
- </body>
-</html>
+{{/partial}}
+{{>layout.hbs}}
