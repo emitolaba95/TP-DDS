@@ -129,16 +129,17 @@ Layout styles
 	background-color: #fff;
 }
 
-.footer {
+footer {
   position: absolute;
+  text-align: center;
   background-color: #008CBA;
   bottom: 0;
   width: 100%;
-  height: 60px;
+  height: 50px;
 }
 
 p.distinct{
-				 color: #FFFFFF;
+  color: #FFFFFF;
 }
 
 /* -----------------------

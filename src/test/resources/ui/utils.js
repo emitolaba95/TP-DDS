@@ -8,15 +8,16 @@ function alertar(texto){
     window.alert(texto);
 }
 
-function dar_bienvenida(){
-    alertar("Bienvenido!");
-}
-
-function verificar_pass(password){
-    pass = document.getElementById(password).innerHTML;
+function verificar_pass(){
+    var user = document.forms["formulario"]["usuario"].value;  
+    var pass = document.forms["formulario"]["password"].value;
     
-    if(pass.equals("")){
-        alertar("Debe ingresar una contraseña!");
+    var falta_pass = (pass===""|| pass===null);
+    var falta_user = (user==="" || user===null) ;
+    
+    if(falta_pass || falta_user ){
+        alertar("Debe completar los datos!");
+      
     }
-        
+    return (!falta_pass && !falta_user );
 }

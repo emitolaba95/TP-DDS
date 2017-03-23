@@ -5,13 +5,13 @@
   <title>POIS</title>
 </head>
 <body>
-    <script src="utils.js"></script>    
+    <script type="text/javascript" src="utils.js"></script>    
   <div></div>
   <h1>POIS</h1>
   <div>
     <h3> Bienvenido. Identif&iacute;quese para continuar</h3>
    
-    <form action="/perfil" method="POST">	 
+    <form method="POST" name="formulario" onsubmit="return verificar_pass()" action="/perfil">	 
     <div>
       <input class="passwd" type="text" name="usuario" placeholder="usuario" size="25">
      </div> 
@@ -21,8 +21,7 @@
      </div>
     
      <div>
-         <input class="botonIngresar" onclick="dar_bienvenida()" type="submit" value="INGRESAR">
-           
+        <input class="botonIngresar" type="submit" value="INGRESAR">
      </div>
     </form>
 
