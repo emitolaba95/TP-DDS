@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>    
+<head>
+  <link rel="stylesheet" type="text/css" href="main.css" media="screen" />
+  <title>POIS</title>
+</head>
+<body>
+    <script type="text/javascript" src="utils.js"></script>    
+  <div></div>
+  <h1>POIS</h1>
+  <div>
+    <h3> Bienvenido. Identif&iacute;quese para continuar</h3>
+   
+    <form method="POST" name="formulario" onsubmit="return verificar_pass()" action="/perfil">	 
+    <div>
+      <input class="passwd" type="text" name="usuario" placeholder="usuario" size="25">
+     </div> 
+    
+     <div>
+      <input id="pass" class="passwd" type="password" name="password" placeholder="contrasenia" size="25">
+     </div>
+    
+     <div>
+        <input class="botonIngresar" type="submit" value="INGRESAR">
+     </div>
+    </form>
+
+  </div>
+  
+  <footer>
+     <b><p class= "distinct">
+       &copy; 2016 UTN FRBA
+     </p></b>
+  </footer>
+  
+  
+  </body>
+</html>

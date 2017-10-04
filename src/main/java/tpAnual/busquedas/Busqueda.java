@@ -6,13 +6,27 @@ import java.util.List;
 
 import org.mongodb.morphia.annotations.Embedded;
 import org.mongodb.morphia.annotations.Entity;
+import org.mongodb.morphia.annotations.Transient;
 
 import tpAnual.POIs.Poi;
 
 
-
 @Entity
 public class Busqueda {
+	
+	private String palabrasBuscadas;
+	@SuppressWarnings("unused")
+	private int id;
+	@Embedded
+	private List<Poi> pois = new ArrayList<Poi>();
+	
+	private Date fecha = new Date();
+	
+	@SuppressWarnings("unused")
+	private Busqueda(){}
+	
+	private int cantidadPois;
+	
 	public String getPalabrasBuscadas() {
 		return palabrasBuscadas;
 	}
@@ -37,27 +51,16 @@ public class Busqueda {
 		this.pois = pois;
 	}
 
-	private String palabrasBuscadas;
-	@SuppressWarnings("unused")
-	private int id;
-	@Embedded
-	private List<Poi> pois = new ArrayList<Poi>();
-	private Date fecha = new Date();
-	
-	@SuppressWarnings("unused")
-	private Busqueda(){}
-	
-	private int cantidadPois;
 	
 	@SuppressWarnings("deprecation")
 	public Busqueda(String palabrasBuscadas, List<Poi> pois){
 		this.palabrasBuscadas=palabrasBuscadas;
 		this.pois.addAll(pois);
 		this.cantidadPois = pois.size();
-		this.fecha = new Date();
-		fecha.setHours(0);
-		fecha.setMinutes(0);
-		fecha.setSeconds(0);
+		//this.fecha = new Date();
+		//fecha.setHours(0);
+		//fecha.setMinutes(0);
+		//fecha.setSeconds(0);
 		id=this.hashCode();
 	}
 	
@@ -99,7 +102,5 @@ public class Busqueda {
 
 	public void setCantidadPois(int cantidadPois) {
 		this.cantidadPois = cantidadPois;
-	}
-	
-	
+	}	
 }

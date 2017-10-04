@@ -3,6 +3,21 @@ function goBack() {
     window.history.back();
 }
 
+function cambiarTexto(id,newText){
+	document.getElementById(id).innerHTML = newText;
+}
+
+//esconde
+function hide(id){
+	document.getElementById(id).style.display = "none";
+}
+
+//muestra
+function show(id){
+	document.getElementById(id).style.display = "block";
+}
+
+
 //muestra una 'ventana emergente'
 function alertar(texto){
     window.alert(texto);

@@ -28,17 +28,17 @@ public class RepositorioPersistente extends RepositorioBusqueda implements WithG
 	}
 	
 	public void registrarBusqueda(String palabrasIngresadas, List<Poi> pois){
+		datastore = MongoDatastoreSingleton.getDatastore("busquedas");
 		
-		MongoDatastoreSingleton.
-			getDatastore("busquedas").
-			save(new Busqueda(palabrasIngresadas,pois));
+		datastore.save(new Busqueda(palabrasIngresadas,pois));
 	}
 	
 	public List<Busqueda> getBusquedas(){
+
+		datastore = MongoDatastoreSingleton.getDatastore("busquedas");
 		List<Busqueda> busquedas = new ArrayList<Busqueda>();
-//		busquedas = datastore.createQuery(Busqueda.class).asList();
-		busquedas.add(new Busqueda("palabras1", null));
-		busquedas.add(new Busqueda("palabras2", null));
+		busquedas = datastore.createQuery(Busqueda.class).asList();
+		
 		return busquedas;
 	}
 	

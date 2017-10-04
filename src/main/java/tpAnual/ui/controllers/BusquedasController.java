@@ -66,9 +66,10 @@ public class BusquedasController {
 
 		
 		
-		busqueda.addAll(RepositorioPersistente.getInstance().listar());
-		busqueda.addAll(RepositorioNoPersistente.getInstance().listar());
+		busqueda.addAll(RepositorioPersistente.getInstance().getBusquedas());
+		//busqueda.addAll(RepositorioNoPersistente.getInstance().listar());
 		
+		/*
 		if(!fechaDesde.isEmpty()){
 			LocalDate desdeTime = LocalDate.parse(req.params(fechaDesde));
 			busqueda = busqueda.stream()
@@ -95,6 +96,7 @@ public class BusquedasController {
 //					           .filter(b->b.getNumeroTerminal()==Integer.parseInt(terminal))
 //					           .collect(Collectors.toList());
 //		}
+		*/
 		
 		model.put("busqueda", busqueda);
 		return new ModelAndView(model, "historico-consultas.hbs");

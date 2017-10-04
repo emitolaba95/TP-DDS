@@ -14,17 +14,20 @@ public static void configure() {
 		HandlebarsTemplateEngine engine = HandlebarsTemplateEngineBuilder
 				.create()
 				.build();
-
-		Spark.staticFiles.location("/ui");
 		
 		TerminalController terminalController = new TerminalController();
 		AdministrarPoiController administrarPoiController = new AdministrarPoiController();
 		
-		Spark.get("/", Server::paginaPrincipal);
-		//Spark.get("/perfil",PoiController::get,engine);
-		Spark.get("/perfil", PerfilController::mostrarPerfil,engine);
+		//Spark.get("/", Server::paginaPrincipal);
+		Spark.get("/perfil",PoiController::get,engine);
+		//Spark.get("/perfil", PerfilController::mostrarPerfil,engine);
+		
 		Spark.post("/perfil", PerfilController::mostrarPerfil,engine);
+		
+		//caso de uso - una busqueda mostrando los pois
 		Spark.get("/pois", PoiController::listar, engine);
+		
+		
 		Spark.get("/poi", PoiController::get,engine);
 		Spark.get("/busqueda", PoiController::listar,engine);
 		Spark.get("/terminal", TerminalController::listar,engine);
@@ -33,7 +36,11 @@ public static void configure() {
 		Spark.get("/modificarTerminal", TerminalController::modificar,engine);
 		Spark.post("/modificarTerminal", terminalController::guardarModificar);
 		Spark.post("/bajaTerminal", terminalController::baja);
-		Spark.get("/historico-consultas", BusquedasController::listarHardcodeado,engine);
+				
+		//Spark.get("/historico-consultas", BusquedasController::listarHardcodeado,engine);
+		Spark.get("/historico-consultas", BusquedasController::listar,engine);
+		
+		
 		Spark.get("/busqueda-pois", BusquedasController::verPois,engine);
 		//Spark.get("/busqueda-pois", BusquedasController::poisDeBusqueda);
 		Spark.get("/administrarPoi", AdministrarPoiController::listar,engine);

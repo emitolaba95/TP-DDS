@@ -34,6 +34,7 @@ public class PoiController {
 		String tipo = req.queryParams("tipo");
 		String calle = req.queryParams("calle");
 		String tags = req.queryParams("tags");
+		
 		long nro = Long.parseLong(req.queryParams("terminal"));
 		
 		Terminal terminal = RepositorioTerminales.getInstance().buscarPorId(nro);
@@ -44,7 +45,8 @@ public class PoiController {
 		
 		List <Poi> resultado = Mapa.getInstance().buscar(parametro);
 		
-		RepositorioPersistente.getInstance().registrarBusqueda(tags, resultado);
+		RepositorioPersistente.getInstance().registrarBusqueda(tags + nombre + calle + tipo, resultado);
+		
 		model.put("terminal",terminal);		
   		model.put("pois", resultado);
   		return new ModelAndView(model, "pois.hbs");

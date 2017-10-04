@@ -7,11 +7,14 @@ import spark.Response;
 import spark.Spark;
 import spark.debug.DebugScreen;
 import tpAnual.util.Reseter;
+import tpAnual.util.bd.mongo.MongoDatastoreSingleton;
 
 public class Server {
 	public static void main(String[] args) {
 		PerThreadEntityManagers.getEntityManager().clear();
 		Reseter.resetSingletons();
+		
+		Reseter.resetDatastore(MongoDatastoreSingleton.getDatastore("busquedas"));
 		
 		configurarSpark();
 		Router.configure();
